@@ -3,7 +3,9 @@
    "version": "1",
    "main": "index.js",
    "license": "MIT",
+
    "scripts": {
+      "build": "babel src --extensions \".js, .ts\" --out-dir dist --copy-files",
       "dev": "ts-node-dev --poll --transpile-only --ignore-watch node_modules --respawn src/shared/http/server.ts",
       "typeorm": "ts-node-dev ./node_modules/typeorm/cli",
       "test": "jest"
@@ -31,8 +33,16 @@
       "uuid": "^8.3.2"
    },
    "devDependencies": {
-      "@babel/preset-typescript": "^7.15.0",
+      "@babel/cli": "^7.16.0",
+      "@babel/core": "^7.16.5",
+      "@babel/node": "^7.16.5",
+      "@babel/plugin-proposal-class-properties": "^7.16.5",
+      "@babel/plugin-proposal-decorators": "^7.16.5",
+      "@babel/preset-env": "^7.16.5",
+      "@babel/preset-typescript": "^7.16.5",
       "@types/node": "^8.0.29",
+      "babel-plugin-module-resolver": "^4.1.0",
+      "babel-plugin-transform-typescript-metadata": "^0.3.2",
       "ts-node": "^10.2.1"
    }
 }
