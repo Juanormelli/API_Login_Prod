@@ -8,13 +8,11 @@ class AuthenticateUserController{
     async handle(request: Request, response: Response):Promise<Response>{
         const {username, password} = request.body
 
-        console.log(username)
         
         const authUser = container.resolve(AuthenticateUserUseCase)
 
         const user = await authUser.execute({username, password});
-        console.log("Novo")
-        console.log(user)
+        
 
         const userRes ={
 
